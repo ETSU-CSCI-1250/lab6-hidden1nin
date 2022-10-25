@@ -8,7 +8,7 @@ for (int i = 80; i < 101; i++) {
     Console.WriteLine($"F: {i} | C: {Celsius(i)}");
 }
 
-for (int i = 0; i < 10; i++)
+for (int i = -10; i < 10; i++)
 {
     Console.WriteLine($"{i} {(IsPrime(i) ? "is prime" : "not prime")}");
 }
@@ -38,8 +38,10 @@ double Celsius(Double temp)
     return Math.Round((double)5 / 9 * (temp - 32), 2);
 }
 
-bool IsPrime(int num) {
-    if (num <= 0) return false;
+bool IsPrime(int num)
+{
+    num = Math.Abs(num);
+    if (num == 0) return false;
     if (num == 1 || num == 2 || num == 3) return true;
     for (int i = 2; i <= Math.Sqrt(num); i++) {
         if (num % i == 0) return false;
