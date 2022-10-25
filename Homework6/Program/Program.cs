@@ -40,9 +40,8 @@ double Celsius(Double temp)
 
 bool IsPrime(int num)
 {
-    num = Math.Abs(num);
-    if (num == 0) return false;
-    if (num == 1 || num == 2 || num == 3) return true;
+    if (num <= 1) return false;
+    if (num == 2 || num == 3) return true;
     for (int i = 2; i <= Math.Sqrt(num); i++) {
         if (num % i == 0) return false;
     }
